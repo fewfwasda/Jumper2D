@@ -3,16 +3,16 @@ using UnityEngine.Events;
 
 public class GlobalEventManager : MonoBehaviour
 {
-    public static UnityEvent CollisionEnemy = new UnityEvent();
-    public static UnityEvent DeathPlayer = new UnityEvent();
+    public static UnityEvent DealDamagePlayer = new UnityEvent();
+    public static UnityEvent DeathCharacter = new UnityEvent();
     public static UnityEvent PickUp = new UnityEvent();
-    public static void SendCollisionEnemy()
+    public static void SendDealDamagePlayer()
     {
-        CollisionEnemy.Invoke();
+        DealDamagePlayer.Invoke();
     }
     public static void SendDeathPlayer()
     {
-        DeathPlayer.Invoke();
+        DeathCharacter.Invoke();
     }
     public static void SendPickUp()
     {

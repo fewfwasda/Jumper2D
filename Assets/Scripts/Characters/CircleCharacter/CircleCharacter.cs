@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class CircleCharacter : Character
+public class CircleCharacter : CharacterMovement
 {
-    protected new void Start()
+    private void Start()
     {
         MaxJumpCount = 1;
         JumpForce = 5;
-        Speed = 30;
+        Speed = 15;
         Rb = GetComponent<Rigidbody2D>();
     }
 }

@@ -5,22 +5,19 @@ using UnityEngine;
 public class CharacterHealthUI : MonoBehaviour
 {
     private TextMeshProUGUI _healthUI;
-    private int _health;
     private void Awake()
     {
-        GlobalEventManager.CollisionEnemy.AddListener(ChangeHealth);
-        GlobalEventManager.DeathPlayer.AddListener(ChangeHealth);
+        GlobalEventManager.DealDamagePlayer.AddListener(ChangeHealth);
+        GlobalEventManager.DeathCharacter.AddListener(ChangeHealth);
         GlobalEventManager.PickUp.AddListener(ChangeHealth);
     }
     private void Start()
     {
         _healthUI = GetComponent<TextMeshProUGUI>();
-        _health = CharacterHealth.Instance.CurrentHealth;
-        _healthUI.text = $"Health: {_health}";
+        _healthUI.text = $"Health: {CharacterHealth.Instance.Current}";
     }
     private void ChangeHealth()
     {
-        _health = CharacterHealth.Instance.CurrentHealth;
-        _healthUI.text = $"Health: {_health}";
+        _healthUI.text = $"Health: {CharacterHealth.Instance.Current}";
     }
 }

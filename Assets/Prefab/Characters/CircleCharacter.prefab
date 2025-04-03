@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8032503285056192030}
   - component: {fileID: 1414594009746043941}
   - component: {fileID: 219107911841290231}
+  - component: {fileID: -6261276691570386334}
   m_Layer: 0
   m_Name: CircleCharacter
   m_TagString: Player
@@ -79,9 +80,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.47320795, b: 1, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 633766423100676217, guid: 771ab8e8aa2d772429a232ee1c106eef, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -166,9 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7763c54b4a67a479027731e92a1681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
-  MaxJumpCount: 0
-  MaxJumpCountCurrent: 0
 --- !u!114 &219107911841290231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,4 +179,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541a97fdabbc7164da5a4819982c9e6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHealth: 0
+--- !u!114 &-6261276691570386334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3923482860000795496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664057dfc4a1b6b4da3101307186bda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lowHPSprite: {fileID: -5771377309518189428, guid: 285cb6cb7b8811f4cbffb1bb020a41d5, type: 3}
+  _deadSprite: {fileID: 581225445, guid: 285cb6cb7b8811f4cbffb1bb020a41d5, type: 3}

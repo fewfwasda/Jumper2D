@@ -1,19 +1,41 @@
 using UnityEngine;
 
-public class CharacterHealth : MonoBehaviour
+public abstract class CharacterHealth : MonoBehaviour
 {
-    public int MaxHealth { get; set; }
-    public int CurrentHealth;
+    //свойство максимального здоровья нужно для изменения спрайта персонажа
+    public int Max { get; protected set; }
+    private int _current;
+    //свойство текущего здоровья нужно для отображения на экране
+    public int Current => _current;
 
     public static CharacterHealth Instance;
+    protected virtual void Start()
+    {
+        _current = Max;
+    }
     private void Awake()
     {
         Instance = this;
     }
-    public virtual void Start()
+    public void Add()
     {
-        MaxHealth = 3;
-        CurrentHealth = MaxHealth;
-        Debug.Log(CurrentHealth);
+        if (_current < Max)
+        {
+            _current++;
+            GlobalEventManager.SendPickUp();
+        }
+    }
+    public void Remove(int damage)
+    {
+        if (_current - damage <= 0)
+        {
+            _current = 0;
+            GlobalEventManager.SendDeathPlayer();
+        }
+        else
+        {
+            _current -= damage;
+            GlobalEventManager.SendDealDamagePlayer();
+        }
     }
 }

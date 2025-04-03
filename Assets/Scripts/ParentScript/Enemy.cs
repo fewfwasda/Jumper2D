@@ -3,43 +3,47 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     private int _edgeMap = 28;
     private int _centreMap = 0;
 
-    private Vector2 directionX;
+    protected int Damage;
+    protected int Speed;
+
+    private Vector2 _directionX;
 
     public static Enemy Instance;
+    protected virtual void Start()
+    {
+        Direction();
+    }
     private void Awake()
     {
         Instance = this;
     }
-    private void Start()
+    protected virtual void Update()
     {
-        //выяснение в какую сторону держать путь препятствию
-        if (transform.position.x > _centreMap) directionX = Vector2.left;
-        else if (transform.position.x < _centreMap) directionX = Vector2.right;
+        DestroyOutOfBounds();
+        Move();
     }
-    public void MoveObstacle(int speed)
+    //выяснение в какую сторону держать путь препятствию
+    private void Direction()
     {
-        transform.Translate(directionX * Time.deltaTime * speed, Space.World);
+        if (transform.position.x > _centreMap) _directionX = Vector2.left;
+        else if (transform.position.x < _centreMap) _directionX = Vector2.right;
     }
-    public void DestroyOutOfBounds()
+    private void Move()
+    {
+        transform.Translate(10 * Time.deltaTime * _directionX, Space.World);
+    }
+    private void DestroyOutOfBounds()
     {
         if (transform.position.x > _edgeMap) Destroy(gameObject);
         else if (transform.position.x < -_edgeMap) Destroy(gameObject);
     }
-    public void Attack(int damage)
+    protected void Attack()
     {
-        if (CharacterHealth.Instance.CurrentHealth - damage <= 0)
-        {
-            GlobalEventManager.SendDeathPlayer();
-        }
-        else
-        {
-            CharacterHealth.Instance.CurrentHealth -= damage;
-            GlobalEventManager.SendCollisionEnemy();
-        }
+        CharacterHealth.Instance.Remove(Damage);
     }
 }

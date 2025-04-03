@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class SquareCharacterHealth : CharacterHealth
 {
-    public override void Start()
+    protected override void Start()
     {
-        MaxHealth = 5;
-        CurrentHealth = MaxHealth;
+        Max = 5;
+        base.Start();
     }
 }

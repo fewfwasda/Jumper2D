@@ -4,23 +4,26 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class GroundTriangleEnemy : Enemy
 {
-    private int _damage = 1;
-    private int _speed = 10;
-    private void Update()
+    protected override void Start()
     {
-        MoveObstacle(_speed);
-        DestroyOutOfBounds();
-        SpinTriangleX();
+        Speed = 15;
+        Damage = 2;
+        base.Start();
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void Update()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Attack(_damage);
-        }
+        base.Update();
+        SpinX();
     }
-    private void SpinTriangleX()
+    private void SpinX()
     {
         transform.Rotate(Vector3.forward, 1);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            CharacterHealth.Instance.Remove(Damage);
+        }
     }
 }

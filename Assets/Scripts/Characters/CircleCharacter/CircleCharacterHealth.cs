@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class CircleCharacterHealth : CharacterHealth
 {
-    public override void Start()
+    protected override void Start()
     {
-        MaxHealth = 3;
-        CurrentHealth = MaxHealth;
+        Max = 3;
+        base.Start();
     }
 }

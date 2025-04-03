@@ -1,34 +1,24 @@
 using UnityEditor;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
-public class Character : MonoBehaviour
+public abstract class CharacterMovement: MonoBehaviour
 {
-    public int Speed;
-
-    //две переменные прыжка для того, чтобы второй прыжок был слабее
+    protected int Speed;
     protected int JumpForce;
-
-    public int MaxJumpCount;
-    public int MaxJumpCountCurrent;
+    protected int MaxJumpCount;
+    private int _maxJumpCountCurrent;
 
     protected Rigidbody2D Rb;
 
     private int _edgeMap = 28;
 
     private float _horizontalInput;
-    public static Character Instance;
+    public static CharacterMovement Instance;
     private void Awake()
     {
         Instance = this;
     }
-    protected void Start()
-    {
-        MaxJumpCount = 0;
-        JumpForce = 0;
-        Speed = 0;
-        Rb = GetComponent<Rigidbody2D>();
-    }
-    private void Update()
+    private void LateUpdate()
     {
         Move();
         Jump();
@@ -39,12 +29,12 @@ public class Character : MonoBehaviour
         _horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector2.right * _horizontalInput * Speed * Time.deltaTime);
     }
-    protected virtual void Jump()
+    private void Jump()
     {
-        if (MaxJumpCountCurrent >= 1 && Input.GetKeyDown(KeyCode.Space))
+        if (_maxJumpCountCurrent >= 1 && Input.GetKeyDown(KeyCode.Space))
         {
             Rb.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
-            MaxJumpCountCurrent--;
+            _maxJumpCountCurrent--;
         }
     }
     private void EdgesMap()
@@ -56,7 +46,14 @@ public class Character : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            MaxJumpCountCurrent = MaxJumpCount;
+            _maxJumpCountCurrent = MaxJumpCount;
         }
+    }
+
+    public void DeadStatePlayer()
+    {
+        Speed = 0;
+        JumpForce = 0;
+        MaxJumpCount = 0;
     }
 }

@@ -2,18 +2,17 @@ using UnityEngine;
 
 public class GroundCircleEnemy : Enemy
 {
-    private int _damage = 2;
-    private int _speed = 20;
-    private void Update()
+    protected override void Start()
     {
-        MoveObstacle(_speed);
-        DestroyOutOfBounds();
+        Damage = 1;
+        Speed = 10;
+        base.Start();
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            Attack(_damage);
+            CharacterHealth.Instance.Remove(Damage);
         }
     }
 }

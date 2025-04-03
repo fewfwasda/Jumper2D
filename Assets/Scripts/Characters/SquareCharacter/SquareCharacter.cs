@@ -1,12 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class SquareCharacter : Character
+public class SquareCharacter : CharacterMovement
 {
-    protected new void Start()
+    private void Start()
     {
         MaxJumpCount = 2;
         JumpForce = 5;
-        Speed = 50;
-        Rb = GetComponent<Rigidbody2D>();
+        Speed = 30;
+        Rb = GetComponent<Rigidbody2D>();   
     }
 }

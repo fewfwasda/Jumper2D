@@ -1,0 +1,284 @@
+fileFormatVersion: 2
+guid: 771ab8e8aa2d772429a232ee1c106eef
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 633766423100676217
+    second: vecteezy_set-of-cute-yellow-emoji-with-outline-style_23337720_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vecteezy_set-of-cute-yellow-emoji-with-outline-style_23337720_0
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 658
+        width: 314
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 0, y: 157}
+        - {x: -54, y: 147}
+        - {x: -91, y: 127}
+        - {x: -124, y: 95}
+        - {x: -146, y: 56}
+        - {x: -157, y: 0}
+        - {x: -144, y: -58}
+        - {x: -122, y: -97}
+        - {x: -87, y: -130}
+        - {x: -51, y: -148}
+        - {x: 1, y: -156}
+        - {x: 61, y: -144}
+        - {x: 109, y: -112}
+        - {x: 136, y: -76}
+        - {x: 151, y: -41}
+        - {x: 156, y: 1}
+        - {x: 148, y: 52}
+        - {x: 129, y: 89}
+        - {x: 101, y: 120}
+        - {x: 56, y: 146}
+      physicsShape:
+      - - {x: 0, y: 157}
+        - {x: -55, y: 148}
+        - {x: -92, y: 127}
+        - {x: -123, y: 98}
+        - {x: -147, y: 56}
+        - {x: -157, y: 0}
+        - {x: -145, y: -58}
+        - {x: -123, y: -97}
+        - {x: -87, y: -130}
+        - {x: -51, y: -148}
+        - {x: 1, y: -157}
+        - {x: 62, y: -145}
+        - {x: 109, y: -113}
+        - {x: 133, y: -81}
+        - {x: 152, y: -41}
+        - {x: 157, y: 1}
+        - {x: 146, y: 52}
+        - {x: 127, y: 89}
+        - {x: 101, y: 119}
+        - {x: 55, y: 146}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9785c7734379bc800800000000000000
+      internalID: 633766423100676217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_set-of-cute-yellow-emoji-with-outline-style_23337720_1
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 658
+        width: 313
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 0, y: 157}
+        - {x: -54, y: 147}
+        - {x: -91, y: 127}
+        - {x: -124, y: 95}
+        - {x: -146, y: 56}
+        - {x: -156.5, y: 0}
+        - {x: -144, y: -58}
+        - {x: -122, y: -97}
+        - {x: -87, y: -130}
+        - {x: -51, y: -148}
+        - {x: 1, y: -156}
+        - {x: 61, y: -144}
+        - {x: 109, y: -112}
+        - {x: 136, y: -76}
+        - {x: 151, y: -41}
+        - {x: 156, y: 1}
+        - {x: 148, y: 52}
+        - {x: 129, y: 89}
+        - {x: 101, y: 120}
+        - {x: 56, y: 146}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a0724ea8b793f4b8abd44f84844a04
+      internalID: -1067748632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_set-of-cute-yellow-emoji-with-outline-style_23337720_2
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 630
+        width: 312
+        height: 341
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -2, y: 170.5}
+        - {x: -57, y: 158.5}
+        - {x: -90, y: 141.5}
+        - {x: -128, y: 103.5}
+        - {x: -150, y: 59.5}
+        - {x: -156, y: 0}
+        - {x: -140, y: -54.5}
+        - {x: -116, y: -90.5}
+        - {x: -88, y: -113.5}
+        - {x: -49, y: -133.5}
+        - {x: -29, y: -160.5}
+        - {x: 1, y: -170.5}
+        - {x: 34, y: -155.5}
+        - {x: 49, y: -133.5}
+        - {x: 100, y: -105.5}
+        - {x: 128, y: -74.5}
+        - {x: 146, y: -40.5}
+        - {x: 156, y: 1}
+        - {x: 151, y: 52.5}
+        - {x: 136, y: 92.5}
+        - {x: 109, y: 127.5}
+        - {x: 65, y: 156.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2358af04cf4224295b29b5f8cbb6a0
+      internalID: -355458037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5c25f55bc3b0c884ab8ea59d3c4fe58d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      vecteezy_set-of-cute-yellow-emoji-with-outline-style_23337720_0: 633766423100676217
+      vecteezy_set-of-cute-yellow-emoji-with-outline-style_23337720_1: -1067748632
+      vecteezy_set-of-cute-yellow-emoji-with-outline-style_23337720_2: -355458037
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
