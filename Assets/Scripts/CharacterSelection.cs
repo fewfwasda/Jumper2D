@@ -10,6 +10,6 @@ public class CharacterSelection : MonoBehaviour
     {
         button = GetComponent<Button>();
 
-        button.onClick.AddListener(() => Debug.Log("a"));
+        button.onClick.AddListener(() => GameManager.Instance.SetCharacter(Character));
     }
 }

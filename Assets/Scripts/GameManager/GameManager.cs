@@ -4,24 +4,37 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _screenOfDeath;
-    private bool _restartButton = false;
+    public static GameManager Instance;
+    public GameObject CurrentCharacter;
     private void Awake()
     {
-        GlobalEventManager.DeathCharacter.AddListener(GameOver);
+        if (Instance) Destroy(gameObject);
+        else Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
-    private void Update()
+
+    public void SetCharacter(GameObject character)
     {
-        if (_restartButton) RestartGame();
+        CurrentCharacter = character;
     }
-    private void GameOver()
-    {
-        _restartButton = true;
-        CharacterMovement.Instance.DeadStatePlayer();
-        _screenOfDeath.SetActive(true);
-    }
-    private void RestartGame()
-    {
-        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    //[SerializeField] private GameObject _screenOfDeath;
+    //private bool _restartButton = false;
+    //private void Awake()
+    //{
+    //    GlobalEventManager.DeathCharacter.AddListener(GameOver);
+    //}
+    //private void Update()
+    //{
+    //    if (_restartButton) RestartGame();
+    //}
+    //private void GameOver()
+    //{
+    //    _restartButton = true;
+    //    CharacterMovement.Instance.DeadStatePlayer();
+    //    _screenOfDeath.SetActive(true);
+    //}
+    //private void RestartGame()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //}
 }

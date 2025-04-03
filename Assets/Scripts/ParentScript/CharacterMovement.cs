@@ -6,7 +6,7 @@ public abstract class CharacterMovement: MonoBehaviour
     protected int Speed;
     protected int JumpForce;
     protected int MaxJumpCount;
-    private int _maxJumpCountCurrent;
+    [SerializeField]private int _maxJumpCountCurrent;
 
     protected Rigidbody2D Rb;
 
