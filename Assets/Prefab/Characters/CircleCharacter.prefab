@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6504497862639610723}
   - component: {fileID: 6995730535585235066}
   - component: {fileID: 8032503285056192030}
-  - component: {fileID: 1414594009746043941}
-  - component: {fileID: 219107911841290231}
-  - component: {fileID: -6261276691570386334}
+  - component: {fileID: 4776011232142906822}
+  - component: {fileID: 2027050956063563149}
+  - component: {fileID: 5102694873832067708}
   m_Layer: 0
   m_Name: CircleCharacter
   m_TagString: Player
@@ -155,7 +155,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &1414594009746043941
+--- !u!114 &4776011232142906822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,10 +164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3923482860000795496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a7763c54b4a67a479027731e92a1681, type: 3}
+  m_Script: {fileID: 11500000, guid: eef7952ffdc6da742a238b9f26958173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &219107911841290231
+--- !u!114 &2027050956063563149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,10 +176,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3923482860000795496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541a97fdabbc7164da5a4819982c9e6d, type: 3}
+  m_Script: {fileID: 11500000, guid: a69daa5f4483cd84c8a86f9dc53b8800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-6261276691570386334
+--- !u!114 &5102694873832067708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,8 +188,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3923482860000795496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664057dfc4a1b6b4da3101307186bda0, type: 3}
+  m_Script: {fileID: 11500000, guid: 18da443c5eed62d4b94d9fb42bbb1ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lowHPSprite: {fileID: -5771377309518189428, guid: 285cb6cb7b8811f4cbffb1bb020a41d5, type: 3}
-  _deadSprite: {fileID: 581225445, guid: 285cb6cb7b8811f4cbffb1bb020a41d5, type: 3}

@@ -1329,6 +1329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12497b50dacffd4ab7cb59a9de03460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentCharacter: {fileID: 3923482860000795496, guid: 56017b12d4a79364aafa75aa72deaf2e, type: 3}
 --- !u!4 &1086384126
 Transform:
   m_ObjectHideFlags: 0
@@ -1888,7 +1889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TemplateCharacter: {fileID: 11400000, guid: 081f1e071afdcad4d9cb066f3dfafce3, type: 2}
   NameText: {fileID: 1731297760}
-  PriceText: {fileID: 628871369}
+  PriceText: {fileID: 394167462}
   JumpCountText: {fileID: 2138334942}
   HealthCountText: {fileID: 1783885512}
   CharacterImage: {fileID: 166403214}

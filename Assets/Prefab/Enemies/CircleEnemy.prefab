@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1314108059550902252}
   - component: {fileID: 8625660821807516728}
   - component: {fileID: 8446472792386294354}
-  - component: {fileID: 5469366026697693843}
+  - component: {fileID: 4178916248345298440}
+  - component: {fileID: 8069105768372800915}
   m_Layer: 0
   m_Name: CircleEnemy
   m_TagString: Enemy
@@ -125,7 +126,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5469366026697693843
+--- !u!114 &4178916248345298440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,6 +135,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4288344421303724765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d20eecfc5ee174ebe7a2d24f1122f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dd7b52a5a611e74689bc359a660b033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8069105768372800915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4288344421303724765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59cabc164784dd14a97d02947dd80673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

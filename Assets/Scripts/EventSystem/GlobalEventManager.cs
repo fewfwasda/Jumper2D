@@ -1,21 +1,21 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GlobalEventManager : MonoBehaviour
+public class GlobalEventManager
 {
-    public static UnityEvent DealDamagePlayer = new UnityEvent();
-    public static UnityEvent DeathCharacter = new UnityEvent();
-    public static UnityEvent PickUp = new UnityEvent();
-    public static void SendDealDamagePlayer()
+    public static UnityEvent ChangeHealth = new UnityEvent();
+    public static UnityEvent StartGame = new UnityEvent();
+    public static UnityEvent GameOver = new UnityEvent();
+    public static void SendChangeHealth()
     {
-        DealDamagePlayer.Invoke();
+        ChangeHealth.Invoke();
     }
-    public static void SendDeathPlayer()
+    public static void SendStartGame()
     {
-        DeathCharacter.Invoke();
+        StartGame.Invoke();
     }
-    public static void SendPickUp()
+    public static void SendGameOver()
     {
-        PickUp.Invoke();
+        GameOver.Invoke();
     }
 }
