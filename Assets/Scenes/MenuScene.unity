@@ -130,16 +130,14 @@ GameObject:
   - component: {fileID: 1378497}
   - component: {fileID: 1378499}
   - component: {fileID: 1378498}
-  - component: {fileID: 1378500}
   - component: {fileID: 1378501}
-  - component: {fileID: 1378502}
   m_Layer: 5
   m_Name: CharacterCardCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1378497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -159,10 +157,10 @@ RectTransform:
   - {fileID: 628871368}
   m_Father: {fileID: 1652257350}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 759.47784, y: -540.2939}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378498
 MonoBehaviour:
@@ -202,24 +200,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378496}
   m_CullTransparentMesh: 1
---- !u!114 &1378500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913507d8fd856534e93e6a11752d0eda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TemplateCharacter: {fileID: 11400000, guid: 5955ab0b14279f247a98d4d403553741, type: 2}
-  NameText: {fileID: 1403624211}
-  PriceText: {fileID: 628871369}
-  JumpCountText: {fileID: 232000695}
-  HealthCountText: {fileID: 1931913276}
-  CharacterImage: {fileID: 536570175}
 --- !u!114 &1378501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,19 +244,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1378502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ee6e1985d683241a9bf4d5bdf3e0d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Character: {fileID: 3923482860000795496, guid: 56017b12d4a79364aafa75aa72deaf2e, type: 3}
 --- !u!1 &123815590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,7 +1296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12497b50dacffd4ab7cb59a9de03460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentCharacter: {fileID: 3923482860000795496, guid: 56017b12d4a79364aafa75aa72deaf2e, type: 3}
 --- !u!4 &1086384126
 Transform:
   m_ObjectHideFlags: 0
@@ -1784,7 +1750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1652257350
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1841,16 +1807,14 @@ GameObject:
   - component: {fileID: 1656701727}
   - component: {fileID: 1656701730}
   - component: {fileID: 1656701729}
-  - component: {fileID: 1656701728}
   - component: {fileID: 1656701731}
-  - component: {fileID: 1656701732}
   m_Layer: 5
   m_Name: CharacterCardSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1656701727
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1870,29 +1834,11 @@ RectTransform:
   - {fileID: 394167461}
   m_Father: {fileID: 1652257350}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1159.4778, y: -540.2939}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1656701728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656701726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913507d8fd856534e93e6a11752d0eda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TemplateCharacter: {fileID: 11400000, guid: 081f1e071afdcad4d9cb066f3dfafce3, type: 2}
-  NameText: {fileID: 1731297760}
-  PriceText: {fileID: 394167462}
-  JumpCountText: {fileID: 2138334942}
-  HealthCountText: {fileID: 1783885512}
-  CharacterImage: {fileID: 166403214}
 --- !u!114 &1656701729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1975,19 +1921,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1656701732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656701726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ee6e1985d683241a9bf4d5bdf3e0d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Character: {fileID: 3234857010911427742, guid: 2f3b2cc967b188540961f7701ba842f0, type: 3}
 --- !u!1 &1731297758
 GameObject:
   m_ObjectHideFlags: 0

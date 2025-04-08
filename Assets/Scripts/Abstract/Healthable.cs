@@ -9,7 +9,6 @@ public abstract class Healthable : MonoBehaviour
     {
         if (Instance != null) Destroy(gameObject);
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
     public void AddHealth(int healing)
     {
@@ -20,6 +19,6 @@ public abstract class Healthable : MonoBehaviour
     {
         Health -= damage;
         if (Health <= 0) GlobalEventManager.SendGameOver();
-        GlobalEventManager.SendChangeHealth();
+        else GlobalEventManager.SendChangeHealth();
     }
 }

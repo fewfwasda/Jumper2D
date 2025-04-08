@@ -14,10 +14,11 @@ public class HealthUI : MonoBehaviour
     {
         GlobalEventManager.StartGame.AddListener(SpawnHeart);
         GlobalEventManager.ChangeHealth.AddListener(ChangeHeart);
+        GlobalEventManager.GameOver.AddListener(ChangeHeart);
     }
     private void SpawnHeart()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < Healthable.Instance.Health; i++)
         {
             Image heart = Instantiate(_fullHeartUI, _positionHeart, Quaternion.identity);
             heart.transform.SetParent(gameObject.transform, false);
