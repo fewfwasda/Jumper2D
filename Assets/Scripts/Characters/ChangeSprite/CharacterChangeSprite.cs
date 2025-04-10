@@ -4,32 +4,22 @@ using UnityEngine;
 public class CharacterChangeSprite : MonoBehaviour
 {
     [SerializeField] private Sprite _lowHPSprite;
+    [SerializeField] private Sprite _normalSprite;
     [SerializeField] private Sprite _deadSprite;
     private SpriteRenderer _spriteRenderer;
-    private int _maxHealthCharacter;
     private void Awake()
     {
-        GlobalEventManager.ChangeHealth.AddListener(LowHP);
+        GlobalEventManager.ChangeHealth.AddListener(ChangeSprite);
         GlobalEventManager.GameOver.AddListener(Dead);
-        GlobalEventManager.StartGame.AddListener(SetMaxHealth);
     }
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    private void SetMaxHealth()
+    private void ChangeSprite()
     {
-        _maxHealthCharacter = Healthable.Instance.Health;
+        if (Healthable.Instance.CurrentHealth <= Healthable.Instance.MaxHealth / 2) _spriteRenderer.sprite = _lowHPSprite;
+        else _spriteRenderer.sprite = _normalSprite;
     }
-    private void LowHP()
-    {        
-        if (Healthable.Instance.Health <= _maxHealthCharacter / 2)
-        {
-            _spriteRenderer.sprite = _lowHPSprite;
-        }
-    }
-    private void Dead()
-    {
-        _spriteRenderer.sprite = _deadSprite;
-    }
+    private void Dead() => _spriteRenderer.sprite = _deadSprite;
 }

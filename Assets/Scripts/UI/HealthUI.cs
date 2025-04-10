@@ -12,13 +12,13 @@ public class HealthUI : MonoBehaviour
     private Vector2 _positionHeart = new Vector2(0, 0);
     private void Awake()
     {
-        GlobalEventManager.StartGame.AddListener(SpawnHeart);
+        GlobalEventManager.PlayerOnScene.AddListener(SpawnIUHeart);
         GlobalEventManager.ChangeHealth.AddListener(ChangeHeart);
         GlobalEventManager.GameOver.AddListener(ChangeHeart);
     }
-    private void SpawnHeart()
+    private void SpawnIUHeart()
     {
-        for (int i = 0; i < Healthable.Instance.Health; i++)
+        for (int i = 0; i < Healthable.Instance.MaxHealth; i++)
         {
             Image heart = Instantiate(_fullHeartUI, _positionHeart, Quaternion.identity);
             heart.transform.SetParent(gameObject.transform, false);
@@ -32,7 +32,7 @@ public class HealthUI : MonoBehaviour
         {
             item.sprite = _emptyHearSprite;
         }
-        for (int i = 0; i < Healthable.Instance.Health; i++)
+        for (int i = 0; i < Healthable.Instance.CurrentHealth; i++)
         {
             _hearts[i].sprite = _fullHeartSprite;
         }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class EnemyTriangleMovement : Moveable
@@ -8,11 +9,12 @@ public class EnemyTriangleMovement : Moveable
     {
         Speed = _speed;
         _direction = GetDirection();
+        RotationTringle();
     }
     void Update()
     {
         Move(_direction);
-        SpinX();
+        EdgesMap();
     }
     protected override void Move(Vector2 direction)
     {
@@ -23,8 +25,12 @@ public class EnemyTriangleMovement : Moveable
         if (transform.position.x > 0) return Vector2.left;
         return Vector2.right;
     }
-    private void SpinX()
+    protected override void EdgesMap()
     {
-        transform.Rotate(Vector3.forward, 1);
+        if (transform.position.x > EdgeMap || transform.position.x < -EdgeMap) Destroy(gameObject);
+    }
+    private void RotationTringle()
+    {
+        transform.DORotate(new Vector3(0, 0, 360), 1.5f, RotateMode.FastBeyond360).SetLoops(-1).SetEase(Ease.Linear).SetLink(gameObject);
     }
 }

@@ -9,12 +9,15 @@ public class SpawnEnemies : MonoBehaviour
     private int _minTimeToSpawnObstacle;
     private int _maxTimeToSpawnObstacle;
 
-    private Vector3 _leftEdgeSpawn = new Vector2(-28, 1);
-    private Vector3 _rigthEdgeSpawn = new Vector2(28, 1);
+    private Vector3 _leftEdgeSpawn = new Vector2(-26, 1);
+    private Vector3 _rigthEdgeSpawn = new Vector2(26, 1);
     private void Awake()
     {
-        GlobalEventManager.StartGame.AddListener(StartSpawn);
         GlobalEventManager.GameOver.AddListener(Stop);
+    }
+    private void Start()
+    {
+        StartSpawn();
     }
     private void StartSpawn()
     {

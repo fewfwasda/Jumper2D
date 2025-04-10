@@ -7,16 +7,25 @@ public class DeathManager : MonoBehaviour
     private bool _playerDeath = false;
     private void Awake()
     {
-        GlobalEventManager.GameOver.AddListener(SetActiveScreen);
+        GlobalEventManager.GameOver.AddListener(GameOver);
     }
     private void Update()
     {
         RestartGame();
     }
+    private void GameOver()
+    {
+        _playerDeath = true;
+        SetActiveScreen();
+        SaveLeveData();
+    }
     private void SetActiveScreen()
     {
         _screenOfDeath.SetActive(true);
-        _playerDeath = true;
+    }
+    private void SaveLeveData()
+    {
+        DataSaveLoad.SaveSacoreCoin();
     }
     private void RestartGame()
     {
