@@ -8,11 +8,7 @@ public class CharacterSelection : MonoBehaviour
     void Start()
     {
         _button = GetComponent<Button>();
-        _button.onClick.AddListener(Select);
-    }
-    private void Select()
-    {
-        GlobalEventManager.SendSelectCharacter(_character);
-        //SpawnCharacter.SetCharacter(_character);
+        _button.onClick.AddListener(() => DataSaveLoad.SaveCharacter(_character));
+        _button.onClick.AddListener(() => ShowSelectCharacter.Instance.SetCharacter(_character));
     }
 }

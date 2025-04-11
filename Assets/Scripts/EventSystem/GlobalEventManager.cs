@@ -6,7 +6,6 @@ public class GlobalEventManager
     public static UnityEvent ChangeHealth = new UnityEvent();
     public static UnityEvent GameOver = new UnityEvent();
     public static UnityEvent CoinPickedUp = new UnityEvent();
-    public static UnityEvent<GameObject> SelectCharacter = new UnityEvent<GameObject>();
 
     //событие отвечает за то, что находится игрок на сцене
     public static UnityEvent PlayerOnScene = new UnityEvent();
@@ -25,10 +24,6 @@ public class GlobalEventManager
     }
 
     public static void SendPlayerOnScene()
-    {
-        PlayerOnScene.Invoke();
-    }
-    public static void SendSelectCharacter(GameObject character)
     {
         PlayerOnScene.Invoke();
     }

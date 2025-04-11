@@ -8,13 +8,7 @@ public class Bank : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
+        Instance = this;
         GlobalEventManager.CoinPickedUp.AddListener(AddCoin);
     }
     private void Start()
