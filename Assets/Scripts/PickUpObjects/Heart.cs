@@ -12,7 +12,7 @@ public class Heart : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Healthable.Instance.AddHealth(_heal);
+            Healthable.AddHealth(_heal);
             Destroy(gameObject);
         }
     }

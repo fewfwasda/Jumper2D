@@ -17,11 +17,6 @@ public class DeathManager : MonoBehaviour
     {
         _playerDeath = true;
         SetActiveScreen();
-        //SaveData();
-    }
-    private void SaveData()
-    {
-        DataSaveLoad.SaveScoreCoin();
     }
     private void SetActiveScreen()
     {

@@ -2,14 +2,15 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShowSelectCharacter : MonoBehaviour
+[RequireComponent(typeof(Image))]
+public class ShowSelectedCharacter : MonoBehaviour
 {
-    private GameObject _charcter;
+    [SerializeField] private GameObject _charcter;
 
     [SerializeField] private Sprite _circleSprite;
     [SerializeField] private Sprite _squareSprite;
     private Image _currentSprite;
-    public static ShowSelectCharacter Instance;
+    public static ShowSelectedCharacter Instance;
     private void Awake()
     {
         Instance = this;
@@ -17,7 +18,6 @@ public class ShowSelectCharacter : MonoBehaviour
     private void Start()
     {
         _currentSprite = GetComponent<Image>();
-        _charcter = DataSaveLoad.LoadCharacter();
         SetCharacter(_charcter);
         RotationTringle();
     }

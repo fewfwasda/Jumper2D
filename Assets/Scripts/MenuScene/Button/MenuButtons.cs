@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuButton : MonoBehaviour
+public class MenuButtons : MonoBehaviour
 {
     public void Play()
     {

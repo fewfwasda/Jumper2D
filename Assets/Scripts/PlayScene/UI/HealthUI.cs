@@ -18,7 +18,7 @@ public class HealthUI : MonoBehaviour
     }
     private void SpawnIUHeart()
     {
-        for (int i = 0; i < Healthable.Instance.MaxHealth; i++)
+        for (int i = 0; i < Healthable.MaxHealth; i++)
         {
             Image heart = Instantiate(_fullHeartUI, _positionHeart, Quaternion.identity);
             heart.transform.SetParent(gameObject.transform, false);
@@ -32,7 +32,7 @@ public class HealthUI : MonoBehaviour
         {
             item.sprite = _emptyHearSprite;
         }
-        for (int i = 0; i < Healthable.Instance.CurrentHealth; i++)
+        for (int i = 0; i < Healthable.CurrentHealth; i++)
         {
             _hearts[i].sprite = _fullHeartSprite;
         }

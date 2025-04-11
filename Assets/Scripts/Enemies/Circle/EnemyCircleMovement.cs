@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyCircleMovement : Moveable
 {
-    private int _speed = 5;
+    private int _speed = 10;
     private Vector2 _direction;
     private void Start()
     {

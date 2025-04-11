@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Button))]
 public class CharacterSelection : MonoBehaviour
 {
     [SerializeField] private GameObject _character;
@@ -8,7 +9,6 @@ public class CharacterSelection : MonoBehaviour
     void Start()
     {
         _button = GetComponent<Button>();
-        _button.onClick.AddListener(() => DataSaveLoad.SaveCharacter(_character));
-        _button.onClick.AddListener(() => ShowSelectCharacter.Instance.SetCharacter(_character));
+        _button.onClick.AddListener(() => ShowSelectedCharacter.Instance.SetCharacter(_character));
     }
 }

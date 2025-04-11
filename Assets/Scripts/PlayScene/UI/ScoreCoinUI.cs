@@ -12,10 +12,10 @@ public class ScoreCoinUI : MonoBehaviour
     private void Start()
     {
         _scoreCoinText = GetComponent<TextMeshProUGUI>();
-        _scoreCoinText.text = Bank.Instance.ScoreCoin.ToString();
+        _scoreCoinText.text = Bank.ScoreCoin.ToString();
     }
     private void SetScore()
     {
-        _scoreCoinText.text = Bank.Instance.ScoreCoin.ToString();
+        _scoreCoinText.text = Bank.ScoreCoin.ToString();
     }
 }

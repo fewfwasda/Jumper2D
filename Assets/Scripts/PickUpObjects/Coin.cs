@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Coin : MonoBehaviour
 {
+    private int _valueCoin = 1;
     private void Start()
     {
         Rotation();
@@ -13,7 +14,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GlobalEventManager.SendCoinPickedUp();
+            Bank.AddCoin(_valueCoin);
             transform.DOMove(new Vector2(21, 17), 1);
             Destroy(gameObject, 1);
         }

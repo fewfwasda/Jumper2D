@@ -3,15 +3,9 @@ using UnityEngine.UIElements.Experimental;
 
 public abstract class Healthable : MonoBehaviour
 {
-    public virtual int MaxHealth { get; protected set; }
-    public virtual int CurrentHealth { get; protected set; }
-    public static Healthable Instance { get; private set; }
-    private void Awake()
-    {
-        if (Instance != null) Destroy(gameObject);
-        Instance = this;
-    }
-    public void AddHealth(int healing)
+    public static int MaxHealth { get; protected set; }
+    public static int CurrentHealth { get; protected set; }
+    public static void AddHealth(int healing)
     {
         if(CurrentHealth < MaxHealth)
         {
@@ -19,7 +13,7 @@ public abstract class Healthable : MonoBehaviour
             GlobalEventManager.SendChangeHealth();
         }
     }
-    public void RemoveHealth(int damage)
+    public static void RemoveHealth(int damage)
     {
         CurrentHealth -= damage;
         if (CurrentHealth <= 0) GlobalEventManager.SendGameOver();

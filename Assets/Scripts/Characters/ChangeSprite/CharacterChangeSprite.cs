@@ -18,7 +18,7 @@ public class CharacterChangeSprite : MonoBehaviour
     }
     private void ChangeSprite()
     {
-        if (Healthable.Instance.CurrentHealth <= Healthable.Instance.MaxHealth / 2) _spriteRenderer.sprite = _lowHPSprite;
+        if (Healthable.CurrentHealth <= Healthable.MaxHealth / 2) _spriteRenderer.sprite = _lowHPSprite;
         else _spriteRenderer.sprite = _normalSprite;
     }
     private void Dead() => _spriteRenderer.sprite = _deadSprite;

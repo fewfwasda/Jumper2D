@@ -2,10 +2,10 @@ using UnityEngine;
 
 public abstract class Moveable : MonoBehaviour
 {
-    protected virtual int Speed { get; set; }
-    protected virtual int JumpForce { get; set; }
-    protected virtual int MaxJumpCount { get; set; }
-    protected virtual int EdgeMap { get; set; } = 27;
+    protected int Speed { get; set; }
+    protected int JumpForce { get; set; }
+    protected int MaxJumpCount { get; set; }
+    protected int EdgeMap { get; set; } = 27;
     
     private void Awake()
     {
