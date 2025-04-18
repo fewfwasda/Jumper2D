@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 
 public class ScoreCoinUI : MonoBehaviour
 {
-    private TextMeshProUGUI _scoreCoinText;
+    private static TextMeshProUGUI _scoreCoinText;
     private void Awake()
     {
         GlobalEventManager.CoinPickedUp.AddListener(SetScore);
@@ -14,7 +14,7 @@ public class ScoreCoinUI : MonoBehaviour
         _scoreCoinText = GetComponent<TextMeshProUGUI>();
         _scoreCoinText.text = Bank.ScoreCoin.ToString();
     }
-    private void SetScore()
+    private static void SetScore()
     {
         _scoreCoinText.text = Bank.ScoreCoin.ToString();
     }

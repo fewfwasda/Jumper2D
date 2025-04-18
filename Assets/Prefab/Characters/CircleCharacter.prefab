@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6640477396754436076}
   - component: {fileID: 6504497862639610723}
   - component: {fileID: 6995730535585235066}
-  - component: {fileID: 8032503285056192030}
+  - component: {fileID: 30541421914319936}
   - component: {fileID: 4776011232142906822}
   - component: {fileID: 5102694873832067708}
   - component: {fileID: 5121151134420509885}
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3923482860000795496}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81,12 +81,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 633766423100676217, guid: 771ab8e8aa2d772429a232ee1c106eef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 133d74348c7bb6e429085bf53f7f9886, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.92, y: 1.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -119,7 +119,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &8032503285056192030
+--- !u!58 &30541421914319936
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,8 +153,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: -0.12145442}
+  m_Radius: 0.5785455
 --- !u!114 &4776011232142906822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +191,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54fb857598124a43918456181c78e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lowHPSprite: {fileID: -5771377309518189428, guid: 285cb6cb7b8811f4cbffb1bb020a41d5, type: 3}
-  _normalSprite: {fileID: 633766423100676217, guid: 771ab8e8aa2d772429a232ee1c106eef, type: 3}
-  _deadSprite: {fileID: 581225445, guid: 285cb6cb7b8811f4cbffb1bb020a41d5, type: 3}

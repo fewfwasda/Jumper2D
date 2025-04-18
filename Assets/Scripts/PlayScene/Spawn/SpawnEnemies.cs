@@ -1,47 +1,54 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using JetBrains.Annotations;
+using System.Security.Cryptography;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _obstaclesPrefabs = new List<GameObject>();
-
-    private int _minTimeToSpawnObstacle;
-    private int _maxTimeToSpawnObstacle;
-
-    private Vector3 _leftEdgeSpawn = new Vector2(-26, 1);
-    private Vector3 _rigthEdgeSpawn = new Vector2(26, 1);
+    private int _minTimeToSpawnObstacle = 1;
+    private int _maxTimeToSpawnObstacle = 4;
+    private Vector3 _leftSide = new Vector2(-26, -2.5f);
+    private Vector3 _rigthSide = new Vector2(26, -2.5f);
+    IEnumerator coroutine;
     private void Awake()
     {
-        GlobalEventManager.GameOver.AddListener(Stop);
+        GlobalEventManager.NextWave.AddListener(() => StartCoroutine(NextWave()));
     }
     private void Start()
     {
-        StartSpawn();
-    }
-    private void StartSpawn()
-    {
-        _minTimeToSpawnObstacle = 0;
-        _maxTimeToSpawnObstacle = 7;
-        StartCoroutine(Spawn());
-    }
-    private Vector2 GetSpawnPosition()
-    {
-        int getEdge = Random.Range(0, 2);
-        if (getEdge == 0) return _leftEdgeSpawn;
-        return _rigthEdgeSpawn;
+        coroutine = Spawn();
+        StartCoroutine(coroutine);
     }
     private IEnumerator Spawn()
     {
         while (true)
         {
-            int indexObstacle = Random.Range(0, _obstaclesPrefabs.Count);
-            Instantiate(_obstaclesPrefabs[indexObstacle], GetSpawnPosition(), Quaternion.identity);
-            yield return new WaitForSeconds(Random.Range(_minTimeToSpawnObstacle, _maxTimeToSpawnObstacle));
+            var obg = EnemiesPool.Instance.Get();
+            obg.transform.position = GetRandomSide();
+            obg.gameObject.SetActive(true);
+            yield return new WaitForSeconds(GetRandomTimeSpawn());
         }
     }
-    private void Stop()
+    private int GetRandomTimeSpawn()
     {
-        Destroy(gameObject);
+        return Random.Range(_minTimeToSpawnObstacle, _maxTimeToSpawnObstacle);
+    }
+    private Vector2 GetRandomSide()
+    {
+        int getEdge = Random.Range(0, 2);
+        if (getEdge == 0) return _leftSide;
+        return _rigthSide;
+    }
+    private IEnumerator NextWave()
+    {
+        StopSpawn();
+        _maxTimeToSpawnObstacle--;
+        yield return new WaitForSeconds(10);
+        StartCoroutine(coroutine);
+    }
+    private void StopSpawn()
+    {
+        StopCoroutine(coroutine);
     }
 }

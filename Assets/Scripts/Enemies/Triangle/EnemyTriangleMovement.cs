@@ -3,12 +3,11 @@ using UnityEngine;
 
 public class EnemyTriangleMovement : Moveable
 {
-    private int _speed = 5;
+    private int _speed = 10;
     private Vector2 _direction;
     private void Start()
     {
         Speed = _speed;
-        _direction = GetDirection();
         RotationTringle();
     }
     void Update()
@@ -27,10 +26,14 @@ public class EnemyTriangleMovement : Moveable
     }
     protected override void EdgesMap()
     {
-        if (transform.position.x > EdgeMap || transform.position.x < -EdgeMap) Destroy(gameObject);
+        if (transform.position.x > EdgeMap || transform.position.x < -EdgeMap) gameObject.SetActive(false);
     }
     private void RotationTringle()
     {
         transform.DORotate(new Vector3(0, 0, 360), 1.5f, RotateMode.FastBeyond360).SetLoops(-1).SetEase(Ease.Linear).SetLink(gameObject);
+    }
+    void OnEnable()
+    {
+        _direction = GetDirection();
     }
 }

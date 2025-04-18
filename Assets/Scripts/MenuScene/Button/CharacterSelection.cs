@@ -9,6 +9,6 @@ public class CharacterSelection : MonoBehaviour
     void Start()
     {
         _button = GetComponent<Button>();
-        _button.onClick.AddListener(() => ShowSelectedCharacter.Instance.SetCharacter(_character));
+        _button.onClick.AddListener(() => SelectedCharacter.SetCharacter(_character));
     }
 }

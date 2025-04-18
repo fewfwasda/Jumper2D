@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class SpawnPickUp : MonoBehaviour
 {
-    private int _minTimeToSpawn = 10;
-    private int _maxTimeToSpawn = 15;
+    private int _minTimeToSpawn = 1;
+    private int _maxTimeToSpawn = 5;
 
-    private int _edgeSpawnX = 26;
+    private int _edgeSpawnX = 25;
     private int _edgeSpawnY = 19;
 
     [SerializeField] List<GameObject> _pickUpObjects = new List<GameObject>();
 
-
     private void Awake()
     {
-        GlobalEventManager.GameOver.AddListener(Stop);
+        //GlobalEventManager.StatePlayer.AddListener(Stop);
     }
     private void Start()
     {

@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public abstract class Moveable : MonoBehaviour
@@ -6,10 +7,10 @@ public abstract class Moveable : MonoBehaviour
     protected int JumpForce { get; set; }
     protected int MaxJumpCount { get; set; }
     protected int EdgeMap { get; set; } = 27;
-    
+
     private void Awake()
     {
-        GlobalEventManager.GameOver.AddListener(MoveableStatsAfterDead);
+        GlobalEventManager.StatePlayer.AddListener(MoveableStatsAfterDead);
     }
     protected virtual void Move(Vector2 direction)
     {
@@ -28,9 +29,12 @@ public abstract class Moveable : MonoBehaviour
         if (transform.position.x > EdgeMap) transform.position = new Vector2(-EdgeMap, transform.position.y);
         else if (transform.position.x < -EdgeMap) transform.position = new Vector2(EdgeMap, transform.position.y);
     }
-    private void MoveableStatsAfterDead()
+    private void MoveableStatsAfterDead(bool isDeath)
     {
-        Speed = 0;
-        MaxJumpCount = 0;
+        if (isDeath)
+        {
+            Speed = 0;
+            MaxJumpCount = 0;
+        }
     }
 }

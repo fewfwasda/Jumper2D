@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
@@ -8,7 +9,7 @@ public class ShowSelectedCharacter : MonoBehaviour
     [SerializeField] private GameObject _charcter;
 
     [SerializeField] private Sprite _circleSprite;
-    [SerializeField] private Sprite _squareSprite;
+    [SerializeField] private Sprite _rectangleSprite;
     private Image _currentSprite;
     public static ShowSelectedCharacter Instance;
     private void Awake()
@@ -17,11 +18,12 @@ public class ShowSelectedCharacter : MonoBehaviour
     }
     private void Start()
     {
+        if (DataSaveLoad.LoadCharacter() != null) _charcter = DataSaveLoad.LoadCharacter();
         _currentSprite = GetComponent<Image>();
-        SetCharacter(_charcter);
+        ShowCharacter(_charcter);
         RotationTringle();
     }
-    public void SetCharacter(GameObject character)
+    public void ShowCharacter(GameObject character)
     {
         _charcter = character;
         switch (_charcter.name)
@@ -29,8 +31,8 @@ public class ShowSelectedCharacter : MonoBehaviour
             case "CircleCharacter":
                 _currentSprite.sprite = _circleSprite;
                 break;
-            case "SquareCharacter":
-                _currentSprite.sprite = _squareSprite;
+            case "RectangleCharacter":
+                _currentSprite.sprite = _rectangleSprite;
                 break;
             default:
                 _currentSprite.sprite = _circleSprite;

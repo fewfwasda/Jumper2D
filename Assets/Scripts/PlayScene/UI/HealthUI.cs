@@ -8,13 +8,12 @@ public class HealthUI : MonoBehaviour
     [SerializeField] private Sprite _fullHeartSprite;
     [SerializeField] private Sprite _emptyHearSprite;
     [SerializeField]private List<Image> _hearts = new List<Image>();
-    private int _spaceBetweenHearts = 100;
+    private int _spaceBetweenHearts = 80;
     private Vector2 _positionHeart = new Vector2(0, 0);
     private void Awake()
     {
         GlobalEventManager.PlayerOnScene.AddListener(SpawnIUHeart);
         GlobalEventManager.ChangeHealth.AddListener(ChangeHeart);
-        GlobalEventManager.GameOver.AddListener(ChangeHeart);
     }
     private void SpawnIUHeart()
     {

@@ -4,6 +4,7 @@ using UnityEngine;
 public class Heart : MonoBehaviour
 {
     private int _heal = 1;
+    private Vector2 _positionUIHearts = new Vector2(-16f, 14.2f);
     private void Start()
     {
         Rotation();
@@ -13,8 +14,13 @@ public class Heart : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Healthable.AddHealth(_heal);
-            Destroy(gameObject);
+            MoveToUIHearts();
+            Destroy(gameObject, 1);
         }
+    }
+    private void MoveToUIHearts()
+    {
+        transform.DOMove(_positionUIHearts, 1);
     }
     private void Rotation()
     {
