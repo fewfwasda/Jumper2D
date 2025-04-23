@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
@@ -9,6 +10,7 @@ public class CharacterSelection : MonoBehaviour
     void Start()
     {
         _button = GetComponent<Button>();
-        _button.onClick.AddListener(() => SelectedCharacter.SetCharacter(_character));
+        _button.onClick.AddListener(() => SaveSelectedCharacter.SaveCharacter(_character));
+        _button.onClick.AddListener(() => ShowSelectedCharacter.Instance.ShowCharacter(_character));
     }
 }

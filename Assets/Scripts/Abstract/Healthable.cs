@@ -6,7 +6,7 @@ public abstract class Healthable : MonoBehaviour
     public static int MaxHealth { get; protected set; }
     public static int CurrentHealth { get; protected set; }
 
-    private static bool _isDeath;
+    private static bool alivePlayer;
     public static void AddHealth(int healing)
     {
         if(CurrentHealth < MaxHealth)
@@ -21,8 +21,8 @@ public abstract class Healthable : MonoBehaviour
         GlobalEventManager.SendChangeHealth();
         if (CurrentHealth <= 0)
         {
-            _isDeath = true;
-            GlobalEventManager.SendStatePlayer(_isDeath);
+            alivePlayer = false;
+            GlobalEventManager.SendIsAlivePlayer(alivePlayer);
         }
     }
 }

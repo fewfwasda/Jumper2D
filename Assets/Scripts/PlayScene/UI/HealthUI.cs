@@ -12,17 +12,20 @@ public class HealthUI : MonoBehaviour
     private Vector2 _positionHeart = new Vector2(0, 0);
     private void Awake()
     {
-        GlobalEventManager.PlayerOnScene.AddListener(SpawnIUHeart);
+        GlobalEventManager.IsPlayerAlive.AddListener(SpawnIUHeart);
         GlobalEventManager.ChangeHealth.AddListener(ChangeHeart);
     }
-    private void SpawnIUHeart()
+    private void SpawnIUHeart(bool alivePlayer)
     {
-        for (int i = 0; i < Healthable.MaxHealth; i++)
+        if (alivePlayer)
         {
-            Image heart = Instantiate(_fullHeartUI, _positionHeart, Quaternion.identity);
-            heart.transform.SetParent(gameObject.transform, false);
-            _hearts.Add(heart);
-            _positionHeart += new Vector2(_spaceBetweenHearts, 0);
+            for (int i = 0; i < Healthable.MaxHealth; i++)
+            {
+                Image heart = Instantiate(_fullHeartUI, _positionHeart, Quaternion.identity);
+                heart.transform.SetParent(gameObject.transform, false);
+                _hearts.Add(heart);
+                _positionHeart += new Vector2(_spaceBetweenHearts, 0);
+            }
         }
     }
     private void ChangeHeart()

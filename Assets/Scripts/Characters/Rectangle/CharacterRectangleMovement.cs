@@ -48,7 +48,7 @@ public class CharacterRectangleMovement : Moveable
     }
     private void RotationX(int valueRotationX)
     {
-        transform.DOLocalRotate(new Vector3(0, 0, valueRotationX), 1f, RotateMode.FastBeyond360);
+        transform.DOLocalRotate(new Vector3(0, 0, valueRotationX), 1f, RotateMode.FastBeyond360).SetLink(gameObject);
     }
     protected override void Move(Vector2 direction)
     {

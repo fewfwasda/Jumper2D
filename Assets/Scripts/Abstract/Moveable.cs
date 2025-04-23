@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public abstract class Moveable : MonoBehaviour
@@ -10,7 +9,7 @@ public abstract class Moveable : MonoBehaviour
 
     private void Awake()
     {
-        GlobalEventManager.StatePlayer.AddListener(MoveableStatsAfterDead);
+        GlobalEventManager.IsPlayerAlive.AddListener(MoveableStatsAfterDead);
     }
     protected virtual void Move(Vector2 direction)
     {
@@ -29,12 +28,12 @@ public abstract class Moveable : MonoBehaviour
         if (transform.position.x > EdgeMap) transform.position = new Vector2(-EdgeMap, transform.position.y);
         else if (transform.position.x < -EdgeMap) transform.position = new Vector2(EdgeMap, transform.position.y);
     }
-    private void MoveableStatsAfterDead(bool isDeath)
+    private void MoveableStatsAfterDead(bool alivePlayer)
     {
-        if (isDeath)
+        if (!alivePlayer)
         {
             Speed = 0;
-            MaxJumpCount = 0;
+            JumpForce = 0;
         }
     }
 }

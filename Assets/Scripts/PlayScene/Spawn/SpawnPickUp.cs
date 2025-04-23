@@ -4,34 +4,46 @@ using UnityEngine;
 
 public class SpawnPickUp : MonoBehaviour
 {
-    private int _minTimeToSpawn = 1;
-    private int _maxTimeToSpawn = 5;
+    private int _minTimeToSpawnPickUp = 10;
+    private int _maxTimeToSpawnPickUp = 20;
 
     private int _edgeSpawnX = 25;
     private int _edgeSpawnY = 19;
-
-    [SerializeField] List<GameObject> _pickUpObjects = new List<GameObject>();
-
+    private IEnumerator coroutineSpawn;
+    private PickUpPool _pickUpPool;
     private void Awake()
     {
-        //GlobalEventManager.StatePlayer.AddListener(Stop);
+        GlobalEventManager.IsPlayerAlive.AddListener(Stop);
     }
     private void Start()
     {
-        StartCoroutine(Spawn());
+        _pickUpPool = GetComponent<PickUpPool>();
+        coroutineSpawn = Spawn();
+        StartCoroutine(coroutineSpawn);
     }
     private IEnumerator Spawn()
     {
         while (true)
         {
-            int randomPosition = Random.Range(-_edgeSpawnX, _edgeSpawnX);
-            int randomObject = Random.Range(0, _pickUpObjects.Count);
-            Instantiate(_pickUpObjects[randomObject], new Vector2(randomPosition, _edgeSpawnY), Quaternion.identity);
-            yield return new WaitForSeconds(Random.Range(_minTimeToSpawn, _maxTimeToSpawn));
+            GameObject pickUp = _pickUpPool.Get();
+            if (pickUp != null)
+            {
+                int randomPosition = Random.Range(-_edgeSpawnX, _edgeSpawnX);
+                pickUp.transform.position = new Vector2(randomPosition, _edgeSpawnY);
+                pickUp.gameObject.SetActive(true);
+            }
+
+            yield return new WaitForSeconds(GetRandomTimeSpawn());
         }
     }
-    private void Stop()
+
+    private int GetRandomTimeSpawn()
     {
-        Destroy(gameObject);
+        return Random.Range(_minTimeToSpawnPickUp, _maxTimeToSpawnPickUp);
+    }
+
+    private void Stop(bool isAlive)
+    {
+        if (!isAlive) StopCoroutine(coroutineSpawn);
     }
 }

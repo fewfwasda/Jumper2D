@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Coin
   - Enemy
-  - MedicineChest
   - Ground
+  - GameManager
   layers:
   - Default
   - TransparentFX

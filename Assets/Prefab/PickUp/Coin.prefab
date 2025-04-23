@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6996495331082977867}
   - component: {fileID: 643278555844575942}
   - component: {fileID: 1249947692828741559}
-  - component: {fileID: 3007252339972015974}
   - component: {fileID: 1245061075454552227}
+  - component: {fileID: 3007252339972015974}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 8
   m_AngularDamping: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -116,20 +116,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &3007252339972015974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4084269441529554597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2a2745707dd901488b519f1bb3a544a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreCoinUI: {fileID: 6736917470732891196, guid: af83f0d5d496c7e4ebca4aac36f25473, type: 3}
+  m_Constraints: 4
 --- !u!61 &1245061075454552227
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,3 +163,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8833333, y: 0.8833333}
   m_EdgeRadius: 0
+--- !u!114 &3007252339972015974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4084269441529554597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a2745707dd901488b519f1bb3a544a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

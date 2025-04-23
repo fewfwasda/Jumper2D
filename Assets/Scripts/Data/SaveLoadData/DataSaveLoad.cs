@@ -21,17 +21,6 @@ public class DataSaveLoad : MonoBehaviour
         }
         return 0;
     }
-    public static int LoadWave()
-    {
-        string path = Application.persistentDataPath + "/savePlayerRecords.json";
-        if (File.Exists(path))
-        {
-            string json = File.ReadAllText(path);
-            PlayerRecords data = JsonUtility.FromJson<PlayerRecords>(json);
-            return data.ScoreWave;
-        }
-        return 0;
-    }
 
     public static void SaveCharacter(GameObject character)
     {
@@ -40,7 +29,6 @@ public class DataSaveLoad : MonoBehaviour
         data.Character = character;
 
         string json = JsonUtility.ToJson(data);
-
         File.WriteAllText(Application.persistentDataPath + "/saveCharacter.json", json);
     }
     public static GameObject LoadCharacter()

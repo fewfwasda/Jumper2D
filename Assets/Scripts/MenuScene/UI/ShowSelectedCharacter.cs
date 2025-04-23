@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class ShowSelectedCharacter : MonoBehaviour
 {
-    [SerializeField] private GameObject _charcter;
+    [SerializeField] private GameObject _character;
 
     [SerializeField] private Sprite _circleSprite;
     [SerializeField] private Sprite _rectangleSprite;
@@ -18,15 +18,15 @@ public class ShowSelectedCharacter : MonoBehaviour
     }
     private void Start()
     {
-        if (DataSaveLoad.LoadCharacter() != null) _charcter = DataSaveLoad.LoadCharacter();
+        if (DataSaveLoad.LoadCharacter() != null) _character = DataSaveLoad.LoadCharacter();
         _currentSprite = GetComponent<Image>();
-        ShowCharacter(_charcter);
-        RotationTringle();
+        ShowCharacter(_character);
+        RotationCharacter();
     }
     public void ShowCharacter(GameObject character)
     {
-        _charcter = character;
-        switch (_charcter.name)
+        _character = character;
+        switch (_character.name)
         {
             case "CircleCharacter":
                 _currentSprite.sprite = _circleSprite;
@@ -39,7 +39,7 @@ public class ShowSelectedCharacter : MonoBehaviour
                 break;
         }
     }
-    private void RotationTringle()
+    private void RotationCharacter()
     {
         transform.DORotate(new Vector3(0, 0, -360), 1.5f, RotateMode.FastBeyond360).SetLoops(-1).SetEase(Ease.Linear).SetLink(gameObject);
     }
