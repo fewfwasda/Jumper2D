@@ -42,4 +42,27 @@ public class DataSaveLoad : MonoBehaviour
         }
         return null;
     }
+
+    public static void SaveVolumeMusic(float volume)
+    {
+        MusicData data = new MusicData();
+
+        data.Volume = volume;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/saveVolumeMusic.json", json);
+    }
+
+    public static float LoadVolumeMusic()
+    {
+        string path = Application.persistentDataPath + "/saveVolumeMusic.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            MusicData data = JsonUtility.FromJson<MusicData>(json);
+            return data.Volume;
+        }
+        return 0;
+    }
 }

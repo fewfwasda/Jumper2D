@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayButtons : MonoBehaviour
 {
     private bool _statePlayer = false;
+    private bool _isPause = false;
     private void Awake()
     {
         GlobalEventManager.IsPlayerAlive.AddListener(Restart);
@@ -12,15 +13,36 @@ public class PlayButtons : MonoBehaviour
     private void Update()
     {
         Restart(_statePlayer);
-        GoToMenu();
+        Pause();
     }
     private void Restart(bool statePlayer)
     {
         _statePlayer = statePlayer;
         if (!_statePlayer && Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    private void GoToMenu()
+    public void Menu()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
+    }
+    private void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !_isPause)
+        {
+            _isPause = true;
+            ScreensManager.Instance.PauseScreen(_isPause);
+            Time.timeScale = 0;
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && _isPause)
+        {
+            _isPause = false;
+            ScreensManager.Instance.PauseScreen(_isPause);
+            Time.timeScale = 1;
+        }
+    }
+    public void Play()
+    {
+        _isPause = false;
+        ScreensManager.Instance.PauseScreen(_isPause);
+        Time.timeScale = 1;
     }
 }

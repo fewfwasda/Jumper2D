@@ -15,26 +15,26 @@ public class MenuButtons : MonoBehaviour
     public void Setting()
     {
         _settingPanel.SetActive(true);
-        ShowSetting();
+        AnimationSetting();
         _shopPanel.SetActive(false);
     }
     public void Shop()
     {
         _settingPanel.SetActive(false);
-        ShowShop();
+        AnimationShop();
         _shopPanel.SetActive(true);
     }
     public void Quit()
     {
         Application.Quit();
     }
-    private void ShowSetting()
+    private void AnimationSetting()
     {
         KillCirrentAnimationIfActive();
         _animation = DOTween.Sequence();
         _animation.Append(_settingPanel.transform.DOMoveX(-1, 1).From(-960));
     }
-    private void ShowShop()
+    private void AnimationShop()
     {
         KillCirrentAnimationIfActive();
         _animation = DOTween.Sequence();

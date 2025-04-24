@@ -16,7 +16,7 @@ public abstract class PickUpObject : MonoBehaviour
         {
             PickUped();
         }
-        else InvokeRepeating(nameof(Blinking), 2, 0.4f);
+        else if(collision.gameObject.CompareTag("Ground")) InvokeRepeating(nameof(Blinking), 2, 0.4f);
     }
     protected virtual void PickUped()
     {

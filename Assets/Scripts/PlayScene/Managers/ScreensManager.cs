@@ -3,13 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class ScreensManager : MonoBehaviour
 {
-    [SerializeField] GameObject _screenOfDeath;
+    [SerializeField]private GameObject _screenOfDeath;
+    [SerializeField]private GameObject _pauseScreen;
+    public static ScreensManager Instance;
     private void Awake()
     {
+        Instance = this;
         GlobalEventManager.IsPlayerAlive.AddListener(ScreenOfDeadthActivate);
     }
-    public void ScreenOfDeadthActivate(bool alivePlayer)
+    private void ScreenOfDeadthActivate(bool alivePlayer)
     {
         if(!alivePlayer) _screenOfDeath.SetActive(true);
+    }
+    public void PauseScreen(bool isActive)
+    {
+        _pauseScreen.SetActive(isActive);
     }
 }
