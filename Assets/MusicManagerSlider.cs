@@ -14,9 +14,8 @@ public class MusicManagerSlider : MonoBehaviour
         SetVolume();
     }
     private void SetVolume()
-    {
+    { 
         _sliderMusic.value = DataSaveLoad.LoadVolumeMusic();
-        _audioMixer.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 0, DataSaveLoad.LoadVolumeMusic()));
     }
     public void SaveVolume()
     {
@@ -24,6 +23,6 @@ public class MusicManagerSlider : MonoBehaviour
     }
     public void ChangeVolume()
     {
-        _audioMixer.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 0, _sliderMusic.value));
+        _audioMixer.audioMixer.SetFloat("BackgroundMusic", Mathf.Lerp(-80, 0, _sliderMusic.value));
     }
 }

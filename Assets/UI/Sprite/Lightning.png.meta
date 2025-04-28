@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8065fb911d00ced41909caf713e81657
+guid: d68b852a9d1fe774bb7676d37476620f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6743024233415356852
-    second: power_0
+      213: 4285961721599372697
+    second: photo_2025-04-24_21-38-11_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: power_0
+      name: Lightning
       rect:
         serializedVersion: 2
-        x: 12
-        y: 1
-        width: 83
-        height: 106
+        x: 146
+        y: 100
+        width: 352
+        height: 408
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c4e4d6f8f27fb62a0800000000000000
-      internalID: -6743024233415356852
+      spriteID: 99d2ad05a7bca7b30800000000000000
+      internalID: 4285961721599372697
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d2d113f153128fa4988721b2e29bf3e3
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      power_0: -6743024233415356852
+      Lightning: 4285961721599372697
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -23,6 +23,7 @@ public class PlayButtons : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
     private void Pause()
     {

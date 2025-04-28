@@ -3,19 +3,29 @@ using UnityEngine.Events;
 
 public class GlobalEventManager
 {
-    public static UnityEvent CoinPickedUp = new UnityEvent();
-    public static UnityEvent<bool> IsPlayerAlive = new UnityEvent<bool>();
-    public static UnityEvent ChangeHealth = new UnityEvent();
-    public static void SendIsAlivePlayer(bool statePlayer)
+    public static UnityEvent PlayerLive = new UnityEvent();
+    public static UnityEvent PlayerDead = new UnityEvent();
+    public static UnityEvent<int> HurtChatacter = new UnityEvent<int>();
+    public static UnityEvent<int> HealChatacter = new UnityEvent<int>();
+    public static UnityEvent<int> CoinPickedUp = new UnityEvent<int>();
+    public static void SendPlayerLive()
     {
-        IsPlayerAlive.Invoke(statePlayer);
+        PlayerLive.Invoke();
     }
-    public static void SendChangeHealth()
+    public static void SendPlayerDead()
     {
-        ChangeHealth.Invoke();
+        PlayerDead.Invoke();
     }
-    public static void SendCoinPickedUp()
+    public static void SendHurtChatacter(int damage)
     {
-        CoinPickedUp.Invoke();
+        HurtChatacter.Invoke(damage);
+    }
+    public static void SendHealChatacter(int heal)
+    {
+        HealChatacter.Invoke(heal);
+    }
+    public static void SendCoinPickedUp(int value)
+    {
+        CoinPickedUp.Invoke(value);
     }
 }

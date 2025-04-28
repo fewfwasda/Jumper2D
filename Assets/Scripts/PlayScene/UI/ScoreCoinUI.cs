@@ -4,18 +4,26 @@ using Unity.VisualScripting;
 
 public class ScoreCoinUI : MonoBehaviour
 {
-    private static TextMeshProUGUI _scoreCoinText;
+    private TextMeshProUGUI _scoreCoinText;
+    private int scoreCoin;
+
     private void Awake()
     {
-        GlobalEventManager.CoinPickedUp.AddListener(SetScore);
+        GlobalEventManager.CoinPickedUp.AddListener(ShowCoinScore);
     }
     private void Start()
     {
         _scoreCoinText = GetComponent<TextMeshProUGUI>();
-        _scoreCoinText.text = DataSaveLoad.LoadCoin().ToString();
+        SetCoinScore();
     }
-    private static void SetScore()
+    private void SetCoinScore()
     {
-        _scoreCoinText.text = Bank.ScoreCoin.ToString();
+        scoreCoin = DataSaveLoad.LoadCoin();
+        _scoreCoinText.text = scoreCoin.ToString();
+    }
+    private void ShowCoinScore(int valueCoin)
+    {
+        scoreCoin += valueCoin;
+        _scoreCoinText.text = scoreCoin.ToString();
     }
 }

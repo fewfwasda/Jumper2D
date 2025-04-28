@@ -11,7 +11,7 @@ public class Heart : PickUpObject
     }
     protected override void PickUped()
     {
-        Healthable.AddHealth(_heal);
+        GlobalEventManager.SendHealChatacter(_heal);
         base.PickUped();
     }
 }

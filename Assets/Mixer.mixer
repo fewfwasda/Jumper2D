@@ -6,7 +6,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Music
+  m_Name: BackgroundMusic
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 7e10566389bfce342bff2b3828c42078
   m_Children: []
@@ -57,7 +57,7 @@ AudioMixerController:
   - guid: 872425ccdfa92bd44989c9d80ec43ca3
     name: MyExposedParam
   - guid: af1b49fbfdc0c43459254e0052aded5b
-    name: MusicVolume
+    name: BackgroundMusic
   - guid: 986ac7836bdb5994e83f08fdc2b1de74
     name: MyExposedParam 1
   m_AudioMixerGroupViews:

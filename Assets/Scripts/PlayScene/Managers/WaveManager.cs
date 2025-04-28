@@ -6,7 +6,7 @@ public class WaveManager : SpawnEnemies
     private int _timeToNextWave = 60;
     private void Awake()
     {
-        GlobalEventManager.IsPlayerAlive.AddListener(StopWave);
+        GlobalEventManager.PlayerDead.AddListener(StopWave);
     }
     private void Start()
     {
@@ -24,12 +24,9 @@ public class WaveManager : SpawnEnemies
         MaxTimeToSpawnEnemy--;
         Invoke(nameof(StartWave), 10);
     }
-    private void StopWave(bool alivePlayer)
+    private void StopWave()
     {
-        if (!alivePlayer)
-        {
-            StopCoroutine(coroutineSpawn);
-            CancelInvoke();
-        }
+        StopCoroutine(coroutineSpawn);
+        CancelInvoke();
     }
 }

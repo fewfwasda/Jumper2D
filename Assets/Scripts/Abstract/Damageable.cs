@@ -7,7 +7,7 @@ public abstract class Damageable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Healthable.RemoveHealth(Damage);
+            GlobalEventManager.SendHurtChatacter(Damage);
         }
     }
 }

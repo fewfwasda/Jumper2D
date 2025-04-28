@@ -6,9 +6,6 @@ public abstract class Moveable : MonoBehaviour
     protected int JumpForce { get; set; }
     protected int MaxJumpCount { get; set; }
     protected int EdgeMap { get; set; } = 27;
-
-    [SerializeField] private AudioClip _audioJump;
-    [SerializeField] private AudioSource _audioSource;
     private void Awake()
     {
         GlobalEventManager.IsPlayerAlive.AddListener(MoveableStatsAfterDead);

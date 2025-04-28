@@ -18,7 +18,7 @@ public class ShowSelectedCharacter : MonoBehaviour
     }
     private void Start()
     {
-        if (DataSaveLoad.LoadCharacter() != null) _character = DataSaveLoad.LoadCharacter();
+        //if (DataSaveLoad.LoadCharacter() != null) _character = DataSaveLoad.LoadCharacter();
         _currentSprite = GetComponent<Image>();
         ShowCharacter(_character);
         RotationCharacter();

@@ -12,7 +12,7 @@ public class Coin : PickUpObject
     }
     protected override void PickUped()
     {
-        Bank.AddCoin(_valueCoin);
+        GlobalEventManager.SendCoinPickedUp(_valueCoin);
         base.PickUped();
     }
 }
